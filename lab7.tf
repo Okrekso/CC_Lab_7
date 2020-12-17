@@ -12,20 +12,6 @@ provider "aws" {
   region  = "us-west-2"
 }
 
-variable constants {
-  type = object({
-    vpc_id = string
-    subnets = list(string)
-    ami_id = string
-  })
-
-  default = {
-    vpc_id = "vpc-0c26c15ad6346113d"
-    subnets = ["subnet-023091a074f60a83b", "subnet-02b8d57b7c6dc0be3"]
-    ami_id = "ami-018c04d38c8fc4bb9"
-  }
-}
-
 # base initialization
 resource "aws_vpc" "primary_vpc" {
     cidr_block = "7.0.0.0/16"
